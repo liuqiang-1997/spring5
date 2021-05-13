@@ -1,7 +1,7 @@
 package com.spring5.bean;
 
 /**
- * 部门类
+ * 部门实体类
  */
 public class Dept {
     private String dname;
