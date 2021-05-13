@@ -20,11 +20,7 @@ package com.aspectj;
  *  1。创建增强类与被增强类，定义方法
  *  2。在Spring配置文件中配置切入点
  *
- *
- *
- *
- *
- *
+
  *
  */
 public class AspectjInfo {
