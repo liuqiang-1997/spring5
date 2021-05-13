@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!--          1。提取list集合类型属性注入-->
+    <util:list id="booksList">
+        <value>java修炼之路</value>
+        <value><![CDATA[
+        <<java手册>>
+        ]]></value>
+        <value>《jvm调优》</value>
+        <value><![CDATA[
+        <<Spring实战>>
+        ]]></value>
+    </util:list>
+
+<!--         2。提取list集合类型属性注入使用-->
+    <bean id="books" class="com.spring5.collectiontype.Books" scope="prototype">
+        <property name="list" ref="booksList"></property>
+    </bean>
+</beans>

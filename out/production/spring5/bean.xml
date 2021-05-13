@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--      1 配置User类对象的创建-->
+    <bean id="user" class="com.spring5.User"></bean>
+
+<!--    2 set方法注入属性-->
+    <!--        使用property完成属性注入，
+                name：类中的属性名；value：
+                向属性中注入的值-->
+    <bean id="book" class="com.spring5.demo1.Book" >
+        <property name="bname" value="java手册"></property>
+        <property name="bauthor" value="alibaba"></property>
+<!--        为属性设置null值-->
+<!--        <property name="address">-->
+<!--            <null></null>-->
+<!--        </property>-->
+<!--        将属性值设置特殊字符
+            1。例<>,进行转义 &lt;  &gt;
+            2.将带有特殊符号的内容写到CDATA中-->
+        <property name="address" >
+            <value><![CDATA[<<兰州>> ]]></value>
+        </property>
+    </bean>
+
+<!--     了解：p名称空间注入-->
+<!--    <bean id="book" class="com.spring5.demo1.Book"-->
+<!--          p:bname="Spring注解系列笔记"-->
+<!--          p:bauthor="小刘"-->
+<!--          p:address="BKTY"> </bean>-->
+
+<!--    3 有参构造器注入属性-->
+    <!--        使用constructor-arg 完成属性注入，
+                name：类中的属性名；
+                value：向属性中注入的值
+                index：有参构造器中的形参列表索引-->
+    <bean id="orders" class="com.spring5.demo1.Orders">
+        <constructor-arg name="oname" value="篮球"></constructor-arg>
+        <constructor-arg name="address" value="china"></constructor-arg>
+    </bean>
+
+
+
+
+</beans>
